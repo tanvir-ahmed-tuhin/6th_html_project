@@ -1,0 +1,251 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islamic World</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8f3;
+    color: #183c2b;
+}
+
+header {
+    background: #075b3b;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h2 {
+    color: #f4d47b;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav a:hover {
+    color: #f4d47b;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #064e35, #16845a);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 28px;
+    background: #f4d47b;
+    color: #064e35;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    padding: 55px 8%;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #00000010;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px #00000018;
+}
+
+.card h3 {
+    color: #087747;
+    margin: 15px 0;
+}
+
+.icon {
+    font-size: 42px;
+}
+
+.quote {
+    background: #e4f1e7;
+    border-radius: 15px;
+    padding: 35px 20px;
+    line-height: 2;
+}
+
+.quote p {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+footer {
+    background: #063d2a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 2;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>☪ Islamic World</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Features</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Welcome to Islamic World</h1>
+    <p>ইসলামের আলোয় আলোকিত হোক আমাদের জীবন।</p>
+    <p>Learn Islam, Read Quran & Follow Sunnah.</p>
+    <a href="#services" class="btn">Explore More</a>
+</div>
+
+<section id="about">
+    <h2>About Islam</h2>
+    <div class="quote">
+        <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <h3>পরম করুণাময়, অসীম দয়ালু আল্লাহর নামে।</h3>
+        <p>ইসলাম শান্তি, দয়া, সততা ও মানবতার শিক্ষা দেয়।</p>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Explore Islamic Features</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">📖</div>
+            <h3>Holy Quran</h3>
+            <p>পবিত্র কুরআন পড়ুন এবং এর শিক্ষা জানুন।</p>
+            <a href="https://quran.com/" class="btn">Read Quran</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤲</div>
+            <h3>Daily Dua</h3>
+            <p>দৈনন্দিন জীবনের প্রয়োজনীয় দোয়া শিখুন।</p>
+            <a href="https://sunnah.com/" class="btn">Learn Dua</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🕌</div>
+            <h3>Prayer Time</h3>
+            <p>নামাজের সময় সম্পর্কে জানুন।</p>
+            <a href="https://www.islamicfinder.org/" class="btn">Explore</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">📿</div>
+            <h3>Tasbih</h3>
+            <p>আল্লাহর জিকির ও তাসবিহ আদায় করুন।</p>
+            <button class="btn" onclick="countTasbih()">Count Tasbih</button>
+            <h3 id="count">0</h3>
+            <button class="btn" onclick="resetTasbih()">Reset</button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Daily Reminder</h2>
+    <div class="quote">
+        <h3>আল্লাহর স্মরণেই অন্তর প্রশান্তি লাভ করে।</h3>
+        <p>— সূরা আর-রা'দ, ১৩:২৮</p>
+    </div>
+</section>
+
+<footer id="contact">
+    <h3>☪ Islamic World</h3>
+    <p>Learn Islam • Read Quran • Follow Sunnah</p>
+    <p>© 2026 Islamic World. All Rights Reserved.</p>
+</footer>
+
+<script>
+let tasbih = 0;
+
+function countTasbih() {
+    tasbih++;
+    document.getElementById("count").innerText = tasbih;
+}
+
+function resetTasbih() {
+    tasbih = 0;
+    document.getElementById("count").innerText = tasbih;
+}
+</script>
+
+</body>
+</html>
+```
